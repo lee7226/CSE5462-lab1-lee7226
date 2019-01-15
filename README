@@ -1,0 +1,21 @@
+Author: Ben Lee
+Lab2: File Sharing Platform
+
+run server using "python lab2_server.py" and client using "python lab2_client.py"
+server should then take care of itself and client usage should be mostly self-explanatory (use help menu)
+
+Assumed running on Linux (Ubuntu 16.04)
+
+Note: no exit command for server, exit using Ctrl+C (theoretically an always-on server doesn't need an 'exit' anyway)
+
+Note: used Professor Ogle's "sample_server.py" and "sample_client.py" as skeletons for my code
+
+Built off of Lab1 so all that functionality is still there and will need to login to use file transfer (easier and more realistic to keep things consistent)
+
+As a result there's still the weird login behavior where it will sometimes tell you that your username or password is incorrect even when it's not, I asked Professor Ogle about it and he said it shouldn't count against me since this lab doesn't test login function. Still, sorry if it's annoying (it certainly was for me while testing this)
+
+I didn't really get to test using multiple machines on stdlinux since apparently just ssh-ing into it is too easy and you need some sort of vpn now, and my Ubuntu installation was not having any of it. It should theoretically work but if not localhost works just fine
+
+Weird behavior: client crashes when trying to transfer this README, but if I rename it README.txt it transfers no problem and everything else I've tested works, including other text files with no file extension. Perhaps it has something to do with this file's contents (maybe quotes or file names with extensions or something)
+
+List of files belonging to a user does not update dynamically since it only reads the current directory when the user logs in, ie. doesn't handle if a user adds or deletes a file from their directory while the program is running, this includes any files downloaded through the program
